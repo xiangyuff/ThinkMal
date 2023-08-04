@@ -118,7 +118,7 @@ time, mark, audio, video {
 }
 
 .bn:hover {
-    color:rgba(221, 204, 204, 0.974);
+    color:rgba(255, 255, 255, 0.919);
 }
 
 .bnup {
