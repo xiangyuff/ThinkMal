@@ -1,5 +1,6 @@
 <template>
     <body>
+      <BackHome></BackHome>
         <LTitle></LTitle>
         <div class="mainbox">
             <div class="column">
@@ -25,6 +26,8 @@ import LRipple from './components/lripple.vue'
 import LTheme from './components/ltheme.vue'
 import LTitle from './components/ltitle.vue'
 import LPercent from './components/lpercent.vue'
+
+import BackHome from '@/components/logo_backhome/index.vue'
 
 import './js/flexible'
 import './js/jquery'

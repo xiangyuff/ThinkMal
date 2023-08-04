@@ -1,5 +1,7 @@
 <template>
 <body>
+    <BackHome></BackHome>
+
     <HTitle></HTitle>
     <div class="mainbox">
 
@@ -31,6 +33,8 @@ import HNum from './components/hnum'
 import HAge from './components/hage'
 import HEpi from './components/hepi'
 import HTitle from './components/htitle'
+
+import BackHome from '@/components/logo_backhome/index.vue'
 
 </script>
 

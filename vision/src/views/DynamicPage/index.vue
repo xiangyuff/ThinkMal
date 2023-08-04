@@ -1,5 +1,7 @@
 <template>
   <body>
+    <BackHome></BackHome>
+
     <header>
       <h1>近二十年动画工作室人气动态排行榜</h1>
       <div class= "head"> </div>
@@ -33,6 +35,8 @@ import './js/jquery.js'
 import * as echarts from 'echarts'
 
 import animejson from './static/anime.json'
+
+import BackHome from '@/components/logo_backhome/index.vue'
 
 import { ref, onMounted} from 'vue'
 

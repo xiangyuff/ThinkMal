@@ -1,5 +1,7 @@
 <template>
     <div class="zmain">
+        <BackHome></BackHome>
+        
         <h1 class="title">基于myanimelist.net网站数据的动画分析</h1>
         <div style="display: flex; flex-wrap: wrap;justify-content: space-between;">
             <e-charts id="top-left"  style="width: 60%; height: 400px;" :option="option1"/>
@@ -12,6 +14,8 @@
 
 <script setup>
 import { ref } from 'vue'
+
+import BackHome from '@/components/logo_backhome/index.vue'
 
 const option1 = ref({
     title: {

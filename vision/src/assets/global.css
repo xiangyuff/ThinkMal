@@ -5,17 +5,28 @@ html, #app {
     padding: 0;
     margin: 0;
     background-color: #070814;
-    cursor: url('./mouse_effect/Link.cur'), auto;
+    cursor: url('./mouse_effect/TEXT.cur'), auto;
 }
 
 input {
-    cursor: url('./mouse_effect/TEXT.cur'), auto;
+    cursor: url('./mouse_effect/Input.cur'), auto;
 }
 
 body{
     margin: 0;
     padding: 0;
 }
+
+body::-webkit-scrollbar, .myscreen::-webkit-scrollbar{
+    width: 8px;
+    background-color: #00000066;
+  }
+
+  body::-webkit-scrollbar-thumb, .myscreen::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 5px;
+    background-color: rgba(61, 43, 111, 0.905);
+  }
 
 @font-face {
     font-family: 'coffee';
@@ -73,5 +84,5 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	cursor: url('./mouse_effect/Link.cur'), auto;
+	cursor: url('./mouse_effect/TEXT.cur'), auto;
 }

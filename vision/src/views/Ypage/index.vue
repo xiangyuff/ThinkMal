@@ -1,5 +1,7 @@
 <template>
     <body>
+      <BackHome></BackHome>
+      
       <YTitle></YTitle>
       <div class="mainbox">
 
@@ -76,6 +78,8 @@ import YStore from './components/ystore.vue'
 import YSbj from './components/ysbj.vue'
 import YHun from './components/yhun.vue'
 import YComp from './components/ycomp.vue'
+
+import BackHome from '@/components/logo_backhome/index.vue'
 
 </script>
 
