@@ -7,6 +7,7 @@
             <div @click="show_login_box" class="mybn" v-show="showbn"></div>
  
             <div v-show="showlogin" class="box login">
+                <div @click="quit_box" class = "quitbn"></div>
                 <div>.</div>
                 <div class="login_title"></div>
 
@@ -107,6 +108,11 @@ const show_regis_box = function () {
     showlogin.value = false
     showregis.value = true
 }
+const quit_box = function () {
+    showbn.value=true
+    showlogin.value = false
+    showregis.value = false
+}
 
 
 </script>
@@ -170,6 +176,17 @@ time, mark, audio, video {
     width:200px;
     height:200px;
     left:18%;
+}
+
+.quitbn {
+    position: absolute;
+    width:50px;
+    height:50px;
+    top: -8%;
+    left: 100%;
+    background-image: url('./images/quit.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .box {

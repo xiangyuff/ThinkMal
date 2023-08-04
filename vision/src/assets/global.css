@@ -5,16 +5,16 @@ html, #app {
     padding: 0;
     margin: 0;
     background-color: #070814;
-    cursor: url('./mouse_effect/Pointer.cur'), auto;
+    cursor: url('./mouse_effect/Link.cur'), auto;
 }
 
 input {
     cursor: url('./mouse_effect/TEXT.cur'), auto;
 }
 
-.clickable {
+/* .clickable {
     cursor: url('./mouse_effect/Help.cur');
-}
+} */
 
 body{
     margin: 0;
@@ -77,5 +77,5 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	cursor: url('./mouse_effect/Pointer.cur'), auto;
+	cursor: url('./mouse_effect/Link.cur'), auto;
 }
