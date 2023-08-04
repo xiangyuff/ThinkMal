@@ -150,8 +150,8 @@ const option2 = ref({
   ]
 })
 
-const option3 = ref({
-    title: {
+const option3 = ref({ 
+  title: {
     text: '1985年至今平均剧集数量',
     left: 'left',
     textStyle:{
@@ -159,13 +159,20 @@ const option3 = ref({
 
     }
   },
+  tooltip:{},
   xAxis: {
     type: 'category',
-    boundaryGap: false
+    boundaryGap: false,
+    axisLabel:{
+      color:'white'
+    }
   },
   yAxis: {
     type: 'value',
-    boundaryGap: [0, '30%']
+    boundaryGap: [0, '30%'],
+    axisLabel:{
+      color:'white'
+    }
   },
   visualMap: {
     type: 'piecewise',
@@ -187,7 +194,7 @@ const option3 = ref({
       symbol: 'none',
       lineStyle: {
         color: '#00FA9A',
-        width: 5
+        width: 3
       },
       markLine: {
         symbol: ['none', 'none'],
@@ -274,12 +281,18 @@ const option4 = ref({
   },
   xAxis: [
     {
-      type: 'value'
+      type: 'value',
+      axisLabel:{
+        color:'white'
+      }
     }
   ],
   yAxis: [
     {
       type: 'category',
+      axisLabel:{
+        color:'white'
+      },
       axisTick: {
         show: false
       },
