@@ -26,7 +26,7 @@ const dataAll = [
 const option = ref({
     color: ["#2f89cf"],
     tooltip: {
-      trigger: "axis",
+      trigger: "item",
       axisPointer: {
         type: "shadow" 
       }
