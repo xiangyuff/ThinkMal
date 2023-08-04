@@ -2,21 +2,29 @@
     <div class="navbar" @click="func">
         <div class="logo"></div>
 
-        <div class="bn forum">
-            <div class="text">forum</div>
-        </div>
+        <RouterLink to="/forum">
+            <div class="bn forum">
+                <div class="text">forum</div>
+            </div>
+        </RouterLink>
 
-        <div class="bn home">
-            <div class="text">home</div>
-        </div>
+        <RouterLink to="/home">
+            <div class="bn home">
+                <div class="text">home</div>
+            </div>
+        </RouterLink>
 
-        <div class="bn login">
-            <div class="text">log in</div>
-        </div>
+        <RouterLink to="/login">
+            <div class="bn login">
+                <div class="text">log in</div>
+            </div>
+        </RouterLink>
 
-        <div class="bn start">
-            <div class="text">start</div>
-        </div>
+        <RouterLink to="/start">
+            <div class="bn start">
+                <div class="text">start</div>
+            </div>
+        </RouterLink>
     </div>
 </template>
 

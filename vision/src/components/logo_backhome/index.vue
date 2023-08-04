@@ -1,6 +1,8 @@
 <template>
     <div class="littlebar">
-        <div class="logo"></div>
+        <RouterLink to="/home">
+            <div class="logo"></div>
+        </RouterLink>
     </div>
 </template>
 

@@ -2,47 +2,62 @@
     <div class="myscreen">
         <Nav></Nav>
         <div class="bigbg">
-            <div class="bn bnup bn1">
-                <div class="text">
-                    受众对比分析
-                </div>
-            </div>
 
-            <div class="bn bnup bn2">
-                <div class="text">
-                    工作室分析
+            <RouterLink to="/gender">
+                <div class="bn bnup bn1">
+                    <div class="text">
+                        受众对比分析
+                    </div>
                 </div>
-            </div>
+            </RouterLink>
 
-            <div class="bn bnup bn3">
-                <div class="text">
-                    历年动画分析
+            <RouterLink to="/studio">
+                <div class="bn bnup bn2">
+                    <div class="text">
+                        工作室分析
+                    </div>
                 </div>
-            </div>
+            </RouterLink>
 
-            <div class="bn bnup bn4">
-                <div class="text">
-                    人气动态排行榜
+            <RouterLink to="/year">
+                <div class="bn bnup bn3">
+                    <div class="text">
+                        历年动画分析
+                    </div>
                 </div>
-            </div>
+            </RouterLink>
 
-            <div class="bn bndown bn5">
-                <div class="text">
-                    动画题材分析
+            <RouterLink to="/dynamic">
+                <div class="bn bnup bn4">
+                    <div class="text">
+                        人气动态排行榜
+                    </div>
                 </div>
-            </div>
+            </RouterLink>
 
-            <div class="bn bndown bn6">
-                <div class="text">
-                    动画搜索
+            <RouterLink to="/type">
+                <div class="bn bndown bn5">
+                    <div class="text">
+                        动画题材分析
+                    </div>
                 </div>
-            </div>
+            </RouterLink>
 
-            <div class="bn bndown bn7">
-                <div class="text">
-                    交流论坛
+            <RouterLink to="/search">
+                <div class="bn bndown bn6">
+                    <div class="text">
+                        动画搜索
+                    </div>
                 </div>
-            </div>
+            </RouterLink>
+
+            <RouterLink to="/forum">
+                <div class="bn bndown bn7">
+                    <div class="text">
+                        交流论坛
+                    </div>
+                </div>
+            </RouterLink>
         </div>
     </div>
 </template>
