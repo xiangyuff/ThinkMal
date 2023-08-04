@@ -12,10 +12,6 @@ input {
     cursor: url('./mouse_effect/TEXT.cur'), auto;
 }
 
-/* .clickable {
-    cursor: url('./mouse_effect/Help.cur');
-} */
-
 body{
     margin: 0;
     padding: 0;
