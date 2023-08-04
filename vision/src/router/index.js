@@ -9,6 +9,7 @@ import Dynamic from "@/views/DynamicPage/index.vue"
 import LogIn from '@/views/LoginPage/index.vue'
 import Home from '@/views/Homepage/index.vue'
 import Search from '@/views/SearchPage/index.vue'
+import Forum from '@/views/Forumpage/index.vue'
 
 const routes = [
   {
@@ -47,6 +48,10 @@ const routes = [
   {
     path:'/search',
     component: Search
+  },
+  {
+    path:'/forum',
+    component: Forum
   }
 ]
 
