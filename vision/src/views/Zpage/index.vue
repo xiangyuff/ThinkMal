@@ -21,7 +21,7 @@ const option1 = ref({
     title: {
         text: '1961年至今追番量和动画数量',
         textStyle:{
-          color:'green'
+          color:'#fff'
         },
         left: 'left'
       },
@@ -101,7 +101,7 @@ const option2 = ref({
     text: '追番量最多的五年与其他年份对比图',
     left: 'center',
     textStyle:{
-      color:'green'
+      color:'#fff'
     }
   },
   tooltip: {
@@ -143,7 +143,7 @@ const option3 = ref({
     text: '1985年至今平均剧集数量',
     left: 'left',
     textStyle:{
-      color:'green'
+      color:'#fff'
 
     }
   },
@@ -242,7 +242,7 @@ const option4 = ref({
   title:{
     text:'2000-2022最高人气和最高分数',
     textStyle:{
-      color:'green',
+      color:'#fff',
       left:'left',
       fontSize:18
     }
