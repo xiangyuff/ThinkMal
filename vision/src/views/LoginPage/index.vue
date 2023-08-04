@@ -27,6 +27,7 @@
             </div>
 
             <div v-show="showregis" class="box regis">
+                <div @click="quit_box" class = "quitbn"></div>
                 <div>.</div>
                 <div class="regis_title"></div>
 
