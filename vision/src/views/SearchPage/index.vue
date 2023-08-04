@@ -3,6 +3,12 @@
         <Nav></Nav>
         <div class="bigbg">
             <img ref="mybgimg" :src="bgimg_url"/>
+
+            <div class="inputbox">
+                <span> search anime </span>
+                <input v-model="anime_name" placeholder="please enter the anime name"/>
+            </div>
+
         </div>
     </div>
 </template>
@@ -11,7 +17,7 @@
 import { ref, onMounted, onUnmounted } from "vue"
 import Nav from '@/components/topnav/index.vue'
 
-const bgimg_url = ref(require('./images/bg1.jpg'))
+const bgimg_url = ref(require('./images/bg1.png'))
 let index = 1
 const mybgimg = ref()
 
@@ -22,8 +28,8 @@ const timer3 = ref()
 onMounted(() => {
     timer.value = setInterval(() => {
                     mybgimg.value.style.opacity = 1
-                    index = index < 3 ? index+1 : 1
-                    bgimg_url.value = require(`./images/bg${index}.jpg`)
+                    index = index < 5 ? index+1 : 1
+                    bgimg_url.value = require(`./images/bg${index}.png`)
                     timer3.value = setTimeout(() => {
                         mybgimg.value.style.opacity = 0.4
                         }, 3000)
@@ -86,6 +92,30 @@ time, mark, audio, video {
     height:100%;
     overflow:hidden;
     transition: 3s all;
+}
+
+.inputbox {
+    position:relative;
+    top:20%;
+    left:20%;
+    width:70%;
+    height:10%;
+
+    color:rgba(255, 255, 255, 0.9);
+    font-family: 'loppe';
+    font-size:60px;
+}
+
+input {
+    left:33%;
+    position:absolute;
+    width: 500px;
+    height:40px;
+    border-radius:20px;
+    border-color:  white;
+    font-size:20px;
+    font-family:'cangji';
+    text-align: center;
 }
 
 </style>

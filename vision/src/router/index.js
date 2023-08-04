@@ -8,6 +8,7 @@ import Dynamic from "@/views/DynamicPage/index.vue"
 
 import LogIn from '@/views/LoginPage/index.vue'
 import Home from '@/views/Homepage/index.vue'
+import Search from '@/views/SearchPage/index.vue'
 
 const routes = [
   {
@@ -42,6 +43,10 @@ const routes = [
   {
     path: '/dynamic',
     component: Dynamic
+  },
+  {
+    path:'/search',
+    component: Search
   }
 ]
 
