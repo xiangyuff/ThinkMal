@@ -25,7 +25,7 @@ const option1 = ref({
         },
         left: 'left'
       },
-      color: ['#5470C6', 'rgb(255, 47, 224)'],
+      color: ['#20B2AA', '#FF8C00'],
       tooltip: {
         trigger: 'axis',
         axisPointer: {
@@ -36,6 +36,7 @@ const option1 = ref({
         right: '20%'
       },
       toolbox: {
+        right: 200,
         feature: {
           dataView: { show: true, readOnly: false },
           restore: { show: true },
@@ -50,6 +51,9 @@ const option1 = ref({
       xAxis: [
         {
           type: 'category',
+          axisLabel: {
+          color: '#fff'
+           },
           axisTick: {
             alignWithLabel: true
           },
@@ -64,7 +68,7 @@ const option1 = ref({
           axisLine: {
             show: true,
             lineStyle: {
-              color: '#5470C6'
+              color: '#20B2AA'
             }
           }
         },
@@ -75,7 +79,7 @@ const option1 = ref({
           axisLine: {
             show: true,
             lineStyle: {
-              color: 'rgb(255, 47, 224)'
+              color: '#FF8C00'
             }
           }
         }
@@ -114,6 +118,14 @@ const option2 = ref({
       color:'lightgreen'
     }
   },
+  color:[
+  '#5470c6',
+  '#91cc75',
+  '#fac858',
+  '#ee6666',
+  '#9370DB',
+  '#20B2AA',
+  ],
   series: [
     {
       name: '追番量',
@@ -174,7 +186,7 @@ const option3 = ref({
       smooth: 0.6,
       symbol: 'none',
       lineStyle: {
-        color: '#5470C6',
+        color: '#00FA9A',
         width: 5
       },
       markLine: {
@@ -182,10 +194,9 @@ const option3 = ref({
         label: { show: true },
         data: [{ xAxis:  28},{ xAxis:  38}]
       },
-      areaStyle: {},
+     
       itemStyle:{
-        color:'gold'
-
+        color:'#F0FFF0'
       },
       data: [
 [1985,80.25],
@@ -234,7 +245,7 @@ const option3 = ref({
 
 const option4 = ref({
     tooltip: {
-    trigger: 'axis',
+    trigger: 'item',
     axisPointer: {
       type: 'shadow'
     }
@@ -274,6 +285,10 @@ const option4 = ref({
       },
       data: [2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022]
     }
+  ],
+  color:[
+  '#20B2AA', 
+  '#FF8C00'
   ],
   series: [
     {
@@ -317,7 +332,7 @@ const option4 = ref({
   }
 .title{
     margin-top: 0;
-    color: greenyellow;
+    color: white;
     text-align: center;
     font-size: 2vw;
 }
