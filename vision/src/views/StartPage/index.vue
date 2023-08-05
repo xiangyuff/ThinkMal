@@ -54,6 +54,14 @@
                         </div>
                     </Transition>
 
+                    <Transition name="myrani">
+                        <div v-show="is_show_thinkmal" class="thinkmal_down">
+                            <div class="text">
+                                ThinkMal
+                            </div>
+                        </div>
+                    </Transition>
+
                     <div class="img9"></div>
                     <div class="img10"></div>
                     <div class="image">
@@ -61,12 +69,24 @@
                         <div class="img12"></div>
                         <div class="img13"></div>
                         <div class="img14"></div>
-    
-                        <div class="mypos animate__bounceInLeft">
-                            <span style="font-family:'qingniao',sans-serif;font-size: 1.2em;">基于动漫网</span>
+
+                        <div class="thinkmal_band">
+                            <div class="text">ThinkMal</div>
                         </div>
                         
-                        <a href="">click to enter ThinkMal</a>
+                        <!-- <div class="thinkmal_enter">
+                            <div class="text">click to enter ThinkMal</div>
+                        </div> -->
+                        <span class="sub_band">click to enter ThinkMal</span>
+                        <span class="ad">
+                            动画大数据分析平台
+                        </span>
+                        <span class="ad2">
+                            海量数据 | 来自 myanimelist.net 的24261条数据<br/>
+                            专注分析 | 使用 Hive数仓 和 Spark SQL 双重保障<br/>
+                            直观可视 | 清晰炫酷的多维度 vue-echarts 展示
+                        </span>
+
                     </div>
     
                 </div>
@@ -447,43 +467,58 @@
         background-image: url('./image/14.png');
     }
     
-    .mypos {
-        width: 300px;
-        height: 300px;
-        position: relative;
-        left: 20%;
-        margin-top: 300px;
-        font-size: 50px;
-    }
-    
-    .image span{
-        letter-spacing: 3px;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        
-        display: block;
-        width: 100%;
-        height: 100%;
-        font-size: 50px;
-    
-        text-align: center;
-        color: rgba(255, 255, 255, .9);
-        z-index: 999;
-        -webkit-text-stroke: 2px rgb(0, 0, 0);
-        /* font: 100 200px ; */
-    }
-    .image a{
-        letter-spacing: 2px;
-        position: absolute;
-        left: 80%;
-        transform: translateX(-50%);
-        margin-top: 600px;
-        text-align: center;
-        color: rgba(255, 255, 255, .9);
-        z-index: 999;
-        -webkit-text-stroke: 2px rgb(0, 0, 0);
-        font: 40 70px ;
-    }
-    
+    .thinkmal_band {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            left: 50%;
+            margin-top: 260px;
+            font-size: 100px;
+            font-family: 'logirent';
+            color: #ffffff;
+            -webkit-text-stroke: 2px rgb(0, 0, 0);
+        }
+
+        .sub_band {
+            letter-spacing: 2px;
+            position: absolute;
+            left: 63%;
+            transform: translateX(-50%);
+            margin-top: 430px;
+            text-align: center;
+            color: rgba(255, 255, 255, .9);
+            z-index: 999;
+            font-size: 43px;
+            font-family: 'cangji';
+        }
+
+        .ad {
+            letter-spacing: 2px;
+            position: absolute;
+            left: 30%;
+            transform: translateX(-50%);
+            margin-top: 290px;
+            text-align: center;
+            color: #c9b0fb;
+            // -webkit-text-stroke: 1px rgb(231, 226, 226);
+            z-index: 999;
+            font-size: 50px;
+            font-family: 'shangshou';
+        }
+
+        .ad2 {
+            letter-spacing: 2px;
+            line-height: 40px;
+            position: absolute;
+            left: 25%;
+            transform: translateX(-50%);
+            margin-top: 400px;
+            text-align: center;
+            color: rgba(216, 215, 217, 0.9);
+            z-index: 999;
+            // -webkit-text-stroke: 2px rgb(0, 0, 0);
+            font-family: 'cangji';
+            font-size: 20px;
+        }
+
     </style>
