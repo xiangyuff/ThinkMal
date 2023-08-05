@@ -1,6 +1,5 @@
 <template>
-    <!-- <BackHome></BackHome> -->
-    <button style="position: absolute;z-index: 999;" @click="showbd1">showbd1</button>
+    <BackHome></BackHome>
     <body class="body">
         <div class="shell">
             <div class="content">
@@ -15,37 +14,45 @@
                     <div class="img7"></div>
                     <div class="img8"></div>
 
-                    <Transition name="fade">
-                    <div v-show="bds1" class="billboard bd1">
-                        <div class="text">
-                            进击的巨人
+                    <Transition name="myrani">
+                        <div v-show="bds1" class="billboard bd1">
+                            <div class="text">
+                                进击的巨人
+                            </div>
                         </div>
-                    </div>
                     </Transition>
 
-                    <div v-show="bds2" class="billboard bd2">
-                        <div class="text">
-                            钢之炼金术师
+                    <Transition name="myrani">
+                        <div v-show="bds2" class="billboard bd2">
+                            <div class="text">
+                                钢之炼金术师
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
 
-                    <div v-show="bds3" class="billboard bd3">
-                        <div class="text">
-                            命运石之门
+                    <Transition name="myrani">
+                        <div v-show="bds3" class="billboard bd3">
+                            <div class="text">
+                                命运石之门
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
 
-                    <div v-show="bds4" class="billboard bd4">
-                        <div class="text">
-                            银魂·最终篇
+                    <Transition name="myrani">
+                        <div v-show="bds4" class="billboard bd4">
+                            <div class="text">
+                                银魂·最终篇
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
 
-                    <div v-show="bds5" class="billboard bd5">
-                        <div class="text">
-                            死神·千年血战篇
+                    <Transition name="myrani">
+                        <div v-show="bds5" class="billboard bd5">
+                            <div class="text">
+                                死神·千年血战篇
+                            </div>
                         </div>
-                    </div>
+                    </Transition>
 
                     <div class="img9"></div>
                     <div class="img10"></div>
@@ -55,7 +62,7 @@
                         <div class="img13"></div>
                         <div class="img14"></div>
     
-                        <div class="mypos">
+                        <div class="mypos animate__bounceInLeft">
                             <span style="font-family:'qingniao',sans-serif;font-size: 1.2em;">基于动漫网</span>
                         </div>
                         
@@ -73,9 +80,10 @@
     import { ref, onMounted } from 'vue'
 
     const bds1 = ref(false)
-    const showbd1 = function() {
-        bds1.value = true
-    }
+    const bds2 = ref(false)
+    const bds3 = ref(false)
+    const bds4 = ref(false)
+    const bds5 = ref(false)
 
     onMounted(()=>{
         window.addEventListener('mousemove',moveWhthMouseMethod)
@@ -155,6 +163,45 @@
                 img10.style.transform = `translate(${img10x}px,2100px)`
                 img14.style.transform = `translate(0px,200px) rotateZ(${img14x}deg)`
             }
+
+            if(bds1.value==false && top > 450 && top < 600) {
+                bds1.value=true;
+            }
+            else if(bds1.value == true && top > 850) {
+                bds1.value = false;
+            }
+
+            if(bds2.value == false && top> 1450 && top < 1600) {
+                bds2.value = true;
+            }
+            else if(bds2.value == true && top > 1850) {
+                bds2.value = false;
+            }
+
+            if(bds3.value == false && top> 2450 && top < 2600) {
+                bds3.value = true;
+            }
+            else if(bds3.value == true && top > 2850) {
+                bds3.value = false;
+            }
+
+            if(bds4.value == false && top> 3450 && top < 3600) {
+                bds4.value = true;
+            }
+            else if(bds4.value == true && top > 3850) {
+                bds4.value = false;
+            }
+
+            if(bds5.value == false && top> 4450 && top < 4600) {
+                bds5.value = true;
+            }
+            else if(bds5.value == true && top > 4850) {
+                bds5.value = false;
+            }
+
+
+
+            
             if (top >= 2200) {
                 document.querySelector('.content').style.background = '#15347b'
             }
@@ -316,6 +363,25 @@
         transform: translate(700px, 2100px);
     }
 
+    @keyframes bounce-in {
+        0% {opacity: 0;transform: scale(0);}
+        50% {opacity: 1;transform: scale(1.25);}
+        100% {opacity: 1;transform: scale(1);}
+    }
+
+    @keyframes fade-out {
+        0% {opacity: 1;transform: scale(1);}
+        50% {opacity: 0.5;transform: translateX(4%);}
+        100% {opacity: 0;transform: translateX(8%);}
+    }
+
+    .myrani-enter-active {
+        animation: bounce-in 2s;
+    }
+    .myrani-leave-active {
+        animation: fade-out 2s;
+    }
+
     .billboard {
         font-size: 80px;
         text-align: center;
@@ -327,8 +393,29 @@
     }
 
     .bd1 {
+        color: #1f2766;
         left: 23%;
         margin-top: 300px;
+    }
+    .bd2 {
+        color: #f6e7b7;
+        left: 5%;
+        margin-top: 1300px; 
+    }
+    .bd3 {
+        color: #bbb1e4;
+        left: -15%;
+        margin-top: 2300px; 
+    }
+    .bd4 {
+        color: #312b5b;
+        left: 23%;
+        margin-top: 3300px; 
+    }
+    .bd5 {
+        color: #000000;
+        left: -15%;
+        margin-top: 4300px; 
     }
 
     .image {
