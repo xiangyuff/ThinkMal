@@ -54,14 +54,6 @@
                         </div>
                     </Transition>
 
-                    <Transition name="myrani">
-                        <div v-show="is_show_thinkmal" class="thinkmal_down">
-                            <div class="text">
-                                ThinkMal
-                            </div>
-                        </div>
-                    </Transition>
-
                     <div class="img9"></div>
                     <div class="img10"></div>
                     <div class="image">
@@ -70,13 +62,12 @@
                         <div class="img13"></div>
                         <div class="img14"></div>
 
-                        <div class="thinkmal_band">
-                            <div class="text">ThinkMal</div>
-                        </div>
-                        
-                        <!-- <div class="thinkmal_enter">
-                            <div class="text">click to enter ThinkMal</div>
-                        </div> -->
+                        <Transition name="myrani">
+                            <div v-show="is_show_thinkmal" class="thinkmal_band">
+                                <div class="text">ThinkMal</div>
+                            </div>
+                        </Transition>
+
                         <span class="sub_band">click to enter ThinkMal</span>
                         <span class="ad">
                             动画大数据分析平台
@@ -104,6 +95,8 @@
     const bds3 = ref(false)
     const bds4 = ref(false)
     const bds5 = ref(false)
+
+    const is_show_thinkmal = ref(false)
 
     onMounted(()=>{
         window.addEventListener('mousemove',moveWhthMouseMethod)
@@ -219,8 +212,10 @@
                 bds5.value = false;
             }
 
-
-
+            if(is_show_thinkmal.value == false && top> 5500) {
+                is_show_thinkmal.value = true;
+            }
+            //
             
             if (top >= 2200) {
                 document.querySelector('.content').style.background = '#15347b'
@@ -482,7 +477,7 @@
         .sub_band {
             letter-spacing: 2px;
             position: absolute;
-            left: 63%;
+            left: 53%;
             transform: translateX(-50%);
             margin-top: 430px;
             text-align: center;
@@ -490,14 +485,21 @@
             z-index: 999;
             font-size: 43px;
             font-family: 'cangji';
+            animation: shine 1.5s linear infinite alternate;
+        }
+
+        @keyframes shine {
+            0% {opacity: 0.2;transform: scale(0.9);}
+            50% {opacity: 0.6;transform: scale(1);}
+            100% {opacity: 1;transform: scale(1.1);}
         }
 
         .ad {
             letter-spacing: 2px;
             position: absolute;
-            left: 30%;
+            left: 26%;
             transform: translateX(-50%);
-            margin-top: 290px;
+            margin-top: 60px;
             text-align: center;
             color: #c9b0fb;
             // -webkit-text-stroke: 1px rgb(231, 226, 226);
