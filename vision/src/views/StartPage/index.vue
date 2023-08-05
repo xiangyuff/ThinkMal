@@ -68,7 +68,10 @@
                             </div>
                         </Transition>
 
-                        <span class="sub_band">click to enter ThinkMal</span>
+                        <RouterLink to="/login">
+                            <span class="sub_band">click to enter ThinkMal</span>
+                        </RouterLink>
+
                         <span class="ad">
                             动画大数据分析平台
                         </span>
@@ -88,7 +91,7 @@
     
 <script setup>
     import BackHome from '@/components/logo_backhome/index.vue'
-    import { ref, onMounted } from 'vue'
+    import { ref, onMounted, onUnmounted } from 'vue'
 
     const bds1 = ref(false)
     const bds2 = ref(false)
@@ -98,27 +101,17 @@
 
     const is_show_thinkmal = ref(false)
 
+    let mbody = document.querySelector('body')
     onMounted(()=>{
-        window.addEventListener('mousemove',moveWhthMouseMethod)
+        mbody.addEventListener('mousemove',moveWhthMouseMethod)
     })
 
-    function moveWhthMouseMethod() {
+    const mycallback = function(e) {
         let img1 = document.querySelector('.img1')
         let img3 = document.querySelector('.img3')
         let img4 = document.querySelector('.img4')
         let img5 = document.querySelector('.img5')
-
-        let images = document.querySelector('.images')
-        let img6 = document.querySelector('.img6')
-        let img8 = document.querySelector('.img8')
-        let img9 = document.querySelector('.img9')
-        let img10 = document.querySelector('.img10')
-        let img11 = document.querySelector('.img11')
-        let img12 = document.querySelector('.img12')
-        let img13 = document.querySelector('.img13')
-        let img14 = document.querySelector('.img14')
-
-        window.addEventListener('mousemove',function (e){
+        
         let item = document.querySelectorAll(".item")
 
         let mouseX = e.clientX
@@ -153,7 +146,20 @@
         img3.style.transform = `translate(${diff3X}px,${diff3Y}px)`
         img4.style.transform = `translate(${diff4X}px,${diff4Y}px)`
         img5.style.transform = `translate(${diff5X}px,${diff5Y}px)`
-      })
+    }
+
+    function moveWhthMouseMethod() {
+        let images = document.querySelector('.images')
+        let img6 = document.querySelector('.img6')
+        let img8 = document.querySelector('.img8')
+        let img9 = document.querySelector('.img9')
+        let img10 = document.querySelector('.img10')
+        let img11 = document.querySelector('.img11')
+        let img12 = document.querySelector('.img12')
+        let img13 = document.querySelector('.img13')
+        let img14 = document.querySelector('.img14')
+
+        mbody.addEventListener('mousemove',mycallback)
 
 
       images.addEventListener('scroll', function () {
@@ -243,6 +249,10 @@
         })
     }
 
+    onUnmounted(() => {
+        mbody.removeEventListener('mousemove',mycallback)
+        mbody.removeEventListener('mousemove',moveWhthMouseMethod)
+    })
 
  </script>
     
@@ -514,7 +524,7 @@
             position: absolute;
             left: 25%;
             transform: translateX(-50%);
-            margin-top: 400px;
+            margin-top: 350px;
             text-align: center;
             color: rgba(216, 215, 217, 0.9);
             z-index: 999;
