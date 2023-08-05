@@ -190,6 +190,10 @@ time, mark, audio, video {
     background-repeat: no-repeat;
 }
 
+.quitbn:hover {
+    transform: scale(1.2,1.2);
+}
+
 .box {
     position:relative;
     top:23%;
