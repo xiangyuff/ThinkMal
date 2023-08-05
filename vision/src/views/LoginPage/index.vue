@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                <div class="enter"></div>
+                <div @click="clickenter" class="enter"></div>
                 <div @click="show_regis_box" class="to_regis"></div>
             </div>
 
@@ -46,7 +46,7 @@
                     </div>
                 </div>
 
-                <div class="account"></div>
+                <div @click="clickaccount" class="account"></div>
                 <div @click="show_login_box" class="to_login"></div>
             </div>
 
@@ -56,6 +56,8 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue"
+import { useRouter } from "vue-router"
+
 import Nav from '@/components/topnav/index.vue'
 
 const bgimg_url = ref(require('./images/bg1.jpg'))
@@ -115,6 +117,18 @@ const quit_box = function () {
     showregis.value = false
 }
 
+const router = useRouter()
+const clickenter = function() {
+    router.push({
+        path: '/home'
+    })
+}
+
+const clickaccount = function() {
+    router.push({
+        path: '/home'
+    }) 
+}
 
 </script>
 
