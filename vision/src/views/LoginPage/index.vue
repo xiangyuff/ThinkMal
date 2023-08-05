@@ -208,6 +208,7 @@ time, mark, audio, video {
     animation-name: curve;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    animation-direction: alternate;
     animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
