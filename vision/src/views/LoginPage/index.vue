@@ -175,6 +175,26 @@ time, mark, audio, video {
     transition: 3s all;
 }
 
+@keyframes curve {
+    0% {top:60%;left: 19%;}
+
+     13% {top:69%;left: 32%;}
+
+    25% {top:75%;left: 45%;}
+
+     38% {top:69%;left: 58%;}
+
+    50% {top:60%;left: 81%;}
+
+     62% {top:69%;left: 58%;}
+
+    75% {top:75%;left: 45%;}
+
+     87% {top:69%;left: 32%;}
+    
+    100% {top:60%;left: 19%;}
+}
+
 .mybn {
     position: absolute;
     width: 150px;
@@ -184,6 +204,11 @@ time, mark, audio, video {
     background-image: url('./images/bn_a.png');
     background-size: contain;
     background-repeat: no-repeat;
+
+    animation-name: curve;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
 .mybn:hover {
