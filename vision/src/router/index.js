@@ -14,12 +14,12 @@ import Start from '@/views/StartPage/index.vue'
 
 const routes = [
   {
-    path:'/start',
+    path:'/',
     component: Start
   },
   {
-    path:'/',
-    component: LogIn
+    path:'/start',
+    component: Start
   },
   {
     path: '/login',
