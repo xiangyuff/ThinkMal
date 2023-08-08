@@ -7,7 +7,20 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref,onMounted } from 'vue'
+import axios from 'axios'
+
+const resdata = ref(null)
+
+onMounted(()=>{
+  console.log("call comp call axios !")
+  axios.get(`http://localhost:9999/ypage/compareStudio/chart1`).then((response) => {
+      console.log(response)
+      if(response.data.code==20000) {
+        resdata.value = response.data.data
+      }
+  })
+})
 
 const dataBJ = [
 [535, 23848368, 463211, 6.84, 74]

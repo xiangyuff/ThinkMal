@@ -55,7 +55,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue"
+import { ref, onMounted, onUnmounted} from "vue"
 import { useRouter } from "vue-router"
 
 import Nav from '@/components/topnav/index.vue'
@@ -118,13 +118,14 @@ const quit_box = function () {
 }
 
 const router = useRouter()
-const clickenter = function() {
-    router.push({
-        path: '/home'
-    })
-}
 
 const clickaccount = function() {
+    router.push({
+        path: '/home'
+    }) 
+}
+
+const clickenter = function() {
     router.push({
         path: '/home'
     }) 
@@ -152,6 +153,10 @@ time, mark, audio, video {
 	border: 0;
 }
 
+.testbn{
+    position: absolute;
+    top:30%;
+}
 .myscreen {
     position: relative;
     width: 100%;
