@@ -1,13 +1,22 @@
 <template>
     <div class="zmain">
         <BackHome></BackHome>
-        
-        <h1 class="title">基于myanimelist.net网站数据的动画分析</h1>
-        <div style="display: flex; flex-wrap: wrap;justify-content: space-between;">
-            <e-charts id="top-left"  style="width: 60%; height: 400px;" :option="option1"/>
-            <e-charts id="top-right" style="width: 500px; height: 380px;" :option="option2"/>
-            <e-charts id="bottom-left" style="width: 50%; height: 400px;" :option="option3"/>
-            <e-charts id="bottom-right" style="width: 450px; height: 380px;" :option="option4"/>
+        <div class="bigbg"></div>
+        <div class="title">基于myanimelist.net网站数据的动画分析</div>
+        <div class="top-left">
+          <e-charts class="chart chart1" :option="option1"/>
+        </div>
+
+        <div class="top-right">
+          <e-charts class="chart chart2" :option="option2"/>
+        </div>
+
+        <div class="bottom-left">
+          <e-charts class="chart chart3"  :option="option3"/>
+        </div>
+
+        <div class="bottom-right">
+          <e-charts class="chart chart4"  :option="option4"/>
         </div>
     </div>
 </template>
@@ -337,16 +346,114 @@ const option4 = ref({
 
 <style lang="less" scoped>
 .zmain {
-    background-image: url("./zimages/bg1.png");
-    background-repeat: no-repeat; /* 可选，控制背景图片的重复方式 */
-    background-size: cover; /* 可选，控制背景图片的尺寸调整方式 */
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
   }
 .title{
-    margin-top: 0;
+    position: absolute;
+    top:2%;
+    left: 30%;
     color: white;
     text-align: center;
-    font-size: 2vw;
+    font-size: 35px;
+    font-family: "zitao";
+}
+
+.bigbg {
+  position: absolute;
+  margin-top: 10%;
+  width: 100%;
+  height: 100%;
+  background-image: url("./zimages/bg1.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+
+.top-left {
+  position: absolute;
+  top:15%;
+  left: 3%;
+  width: 50%;
+  height: 400px;
+  
+}
+
+.top-right {
+  position: absolute;
+  top:15%;
+  left: 50%;
+  width: 48%;
+  height: 400px;
+}
+
+.bottom-left {
+  position: absolute;
+  top:75%;
+  left: 1%;
+
+  width: 50%;
+  height: 400px;
+}
+
+.bottom-right {
+  position: absolute;
+  top:75%;
+  left: 65%;
+
+  width: 450px;
+  height: 380px;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+}
+
+.chart1 {
+  transform: rotate3d(1, -1, 0.5, -45deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.chart2 {
+  -webkit-transform:rotate3d(0.5, 1, 0, 60deg);
+  transform: rotate3d(0.5, 1, 0, 60deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.chart3 {
+  transform: rotate3d(-1, 0.2, -0.3, -60deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+.chart4 {
+  transform: rotate3d(-1, 0.1, 0.3, -60deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+
+
+.chart1:hover {
+  -webkit-transform:rotate3d(0, 0, 0, 0deg);
+  transform: rotate3d(0, 0, 0, 0deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+}
+
+.chart2:hover {
+  -webkit-transform:rotate3d(0, 0, 0, 0deg);
+  transform: rotate3d(0, 0, 0, 0deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+}
+
+.chart3:hover {
+  -webkit-transform:rotate3d(0, 0, 0, 0deg);
+  transform: rotate3d(0, 0, 0, 0deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
+}
+
+.chart4:hover {
+  -webkit-transform:rotate3d(0, 0, 0, 0deg);
+  transform: rotate3d(0, 0, 0, 0deg);
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
 }
 </style>
