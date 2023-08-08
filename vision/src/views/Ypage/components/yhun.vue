@@ -13,11 +13,11 @@ var myColor = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"]
 const dataset = {
     dimensions: ['name', 'score'],
     source: [
-        ['Sunrise', 314],
-        ['MAPPA', 351],
-        ['Madhouse', 287],
-        ['A-1 Pictures', 219],
-        ['Kyoto Animation', 253]
+        ['Sunrise',7],
+        ['MAPPA', 7],
+        ['Madhouse', 6],
+        ['A-1 Pictures',5],
+        ['Kyoto Animation', 5]
     
     ]
     }
