@@ -10,13 +10,15 @@
 import { ref } from 'vue'
 
 const dataBJ = [
-[118, 50, 0, 1.383, 76, 11, 31]
+[535, 23848368, 463211, 6.84, 74]
 ]
 
-const dataGZ =[]
+const dataGZ =[
+  [68,21381494,379483,7.29,87]
+]
 
 const dataSH = [
-[91, 45, 125, 0.82, 34, 23, 1]
+[41, 17049909,362194, 7.28, 84]
 ]
 
 const lineStyle = {
@@ -50,10 +52,10 @@ const option = ref({
      },
      radar: {
        indicator: [
-         { name: 'Total', max: 300 },
-         { name: 'Num_watch', max: 250 },
-         { name: 'Num_like', max: 300 },
-         { name: 'Avg_score', max: 5 },
+         { name: 'Total', max: 600 },
+         { name: 'Num_watch', max:28000000 },
+         { name: 'Num_like', max: 500000 },
+         { name: 'Avg_score', max: 10 },
          { name: 'Avg_popularity', max: 100 }
        ],
        shape: 'diamond',
