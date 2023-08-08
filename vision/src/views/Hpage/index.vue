@@ -4,17 +4,17 @@
 
     <HTitle></HTitle>
     <div class="mainbox">
-        <div @click="changeshow" class="hcircle"></div>
+        <div v-show="isshow1" @click="changeshow" class="hcircle"></div>
 
         
-        <div class="container">
-        <div class="card">
-          <div class="wrapper">
-            <img src="https://www.jq22.com/newjs/3dCard2.jpg" class="cover-image" />
+        <div v-show="isshow2" @click="changeshow" class="container">
+          <div class="card">
+            <div class="wrapper">
+              <img src="./H_images/c1.jpg" class="cover-image" />
+            </div>
+            <img src="./H_images/c2.png" class="title" />
+            <img src="./H_images/c3.png" class="character" />
           </div>
-          <img src="https://www.jq22.com/newjs/force_mage-title.png" class="title" />
-          <img src="https://www.jq22.com/newjs/force_mage-character.png" class="character" />
-        </div>
         </div>
     
 
