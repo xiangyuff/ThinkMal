@@ -4,6 +4,19 @@
 
     <HTitle></HTitle>
     <div class="mainbox">
+        <div @click="changeshow" class="hcircle"></div>
+
+        
+        <div class="container">
+        <div class="card">
+          <div class="wrapper">
+            <img src="https://www.jq22.com/newjs/3dCard2.jpg" class="cover-image" />
+          </div>
+          <img src="https://www.jq22.com/newjs/force_mage-title.png" class="title" />
+          <img src="https://www.jq22.com/newjs/force_mage-character.png" class="character" />
+        </div>
+        </div>
+    
 
         <div class="column">
             <HType></HType>
@@ -36,6 +49,15 @@ import HTitle from './components/htitle'
 
 import BackHome from '@/components/logo_backhome/index.vue'
 
+import { ref } from 'vue'
+const isshow1=ref(true)
+const isshow2=ref(false)
+
+const changeshow = function() {
+  isshow1.value = !isshow1.value
+  isshow2.value = !isshow2.value
+}
+
 </script>
 
 <style lang="less" scoped>
@@ -56,6 +78,28 @@ body {
   background-attachment:fixed;
   line-height: 1.15;
 }
+
+@keyframes changeright{       
+		 
+     0%{transform:rotate(0deg);}
+  
+     50%{transform:rotate(180deg);}
+  
+     100%{transform:rotate(360deg);}
+   }
+.hcircle {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 55%;
+  left: 43%;
+  background-image: url("./H_images/hcircle.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: scale(1.9,1.9);
+  animation: changeright 6s cubic-bezier(0.445, 0.05, 0.55, 0.95) 0s infinite;
+}
+
 ::v-deep header {
   position: relative;
   height: 1.25rem;
@@ -226,5 +270,107 @@ body {
   padding-top: 0.125rem;
 }
 
+.container{
+  position: absolute;
+  left: 50%;
+  margin-top: 500px;
+  transform: translateX(-50%);
+  perspective: 1500px;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+}
 
+.cover-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  transform: translate3d(0%, -30%, 100px);
+}
 </style>
