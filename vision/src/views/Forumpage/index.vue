@@ -132,8 +132,9 @@ input {
     height: 300px;
     border-radius: 50px;
     
-    font-size: 25px;
+    font-size: 28px;
     text-align: center;
+    font-family: 'cangji';
 
     background-color: rgba(240, 248, 255, 0.681);
 }
