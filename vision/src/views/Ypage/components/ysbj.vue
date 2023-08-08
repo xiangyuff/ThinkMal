@@ -10,12 +10,12 @@
 import { ref } from 'vue'
 
 const data = [
-        { value: 800, name: 'Others' },
-        { value: 635, name: 'Toei Animation' },
-        { value: 580, name: 'J.C.Staff' },
-        { value: 484, name: 'TMS Entertainment' },
-        { value: 300, name: 'DLE' },
-        { value: 200, name: 'Shin-Ei Animation' }
+        { value: 574, name: 'Others' },
+        { value: 287, name: 'Toei Animation' },
+        { value: 193, name: 'J.C.Staff' },
+        { value: 177, name: 'TMS Entertainment' },
+        { value: 162, name: 'DLE' },
+        { value: 154, name: 'Shin-Ei Animation' }
       ]
 
 const defaultPalette = [
