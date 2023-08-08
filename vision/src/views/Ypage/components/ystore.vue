@@ -74,7 +74,7 @@ const option = ref({
           },
         },
         {
-          data: [702, 350, 610, 793, 664],
+          data: [1, 2, 3, 4, 5],
           inverse: true,
           // 不显示y轴的线
           axisLine: {
@@ -94,7 +94,7 @@ const option = ref({
         {
           name: "条",
           type: "bar",
-          data: [70, 34, 60, 78, 69],
+          data: [84.97, 77.69, 77.33, 71.65, 70.99],
           yAxisIndex: 0,
           // 修改第一组柱子的圆角
           itemStyle: {

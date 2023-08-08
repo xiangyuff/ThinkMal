@@ -31,7 +31,7 @@ const mct = ref()
 // prettier-ignore
 let dataAxis = ['Toei Animation', 'Sunrise', 'J.C.Staff', 'Madhouse', 'Shanghai Animation Film Studio', 'TMS Entertainment', 'Studio Deen', 'Production I.G'];
 // prettier-ignore
-let data = [220, 182, 191, 234, 290, 330, 310, 123];
+let data = [832, 535, 374, 335, 333, 319, 290, 269];
 let yMax = 500;
 let dataShadow = [];
 for (let i = 0; i < data.length; i++) {
