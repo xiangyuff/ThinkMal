@@ -348,8 +348,9 @@ const option4 = ref({
 .zmain {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 130vh;
+    overflow: hidden;
   }
 .title{
     position: absolute;
@@ -383,7 +384,7 @@ const option4 = ref({
 .top-right {
   position: absolute;
   top:15%;
-  left: 50%;
+  left: 55%;
   width: 48%;
   height: 400px;
 }
