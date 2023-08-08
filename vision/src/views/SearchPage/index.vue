@@ -8,6 +8,15 @@
                 <span> search anime </span>
                 <input v-model="anime_name" placeholder="please enter the anime name"/>
             </div>
+            <div @click="search" class="searchbn"></div>
+
+            <div v-if="isshowbox" class="box">
+                <div class="text">
+                    <ul>
+                        <li v-for="(o1,o2,o3) in resdata">{{o2}}--{{o1}}</li>
+                    </ul>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -23,6 +32,8 @@ import axios from 'axios'
 const bgimg_url = ref(require('./images/bg1.png'))
 let index = 1
 const mybgimg = ref()
+
+const anime_name = ref('')
 
 const timer = ref()
 const timer2 = ref()
@@ -41,12 +52,6 @@ onMounted(() => {
     timer2.value = setTimeout(() => {
                     mybgimg.value.style.opacity = 0.5
                 }, 3000)
-
-    console.log("onmounted axios here!")
-    axios.get("http://localhost:9999/sys/searchani/all").then((response) => {
-        console.log(response)
-    })
-    
 })
 //及时销毁，防止运行错误
 onUnmounted(()=>{
@@ -58,6 +63,25 @@ onUnmounted(()=>{
     timer3.value = ""
 })
 
+const resdata = ref(null)
+const isshowbox = ref(false)
+
+const search = function() {
+    console.log("call search function!")
+    axios.get(`http://localhost:9999/sys/searchani/searchtitle?name=${anime_name.value}`).then((response) => {
+        console.log(response)
+        if(response.data.code == 20000) {
+            resdata.value = response.data.data[0]
+            console.log("resdata!")
+            console.log(resdata)
+            isshowbox.value = true
+        }
+        else {
+            isshowbox.value = false
+            resdata.value = null
+        }
+    })
+}
 
 </script>
 
@@ -94,6 +118,45 @@ time, mark, audio, video {
     // background-image: url('./images/bg1.jpg');
     // background-size: cover;
     // background-repeat: no-repeat;
+}
+
+.searchbn{
+    position: absolute;
+    top: 20%;
+    left: 79%;
+    width: 50px;
+    height: 50px;
+    background-image: url("./images/search.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.searchbn:hover {
+    transform: scale(1.5,1.5);
+}
+
+.box {
+    position:relative;
+    top:22%;
+    left:25%;
+    width:800px;
+    height:600px;
+    background-image: url('./images/box.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.text {
+    width: 70%;
+    height: 90%;
+
+    position: absolute;
+    top: 5%;
+    left: 30%;
+
+    color: aliceblue;
+    font-size: 23px;
+    font-family: "coffee";
 }
 
 .bigbg img{
