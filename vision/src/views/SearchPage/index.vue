@@ -17,6 +17,9 @@
 import { ref, onMounted, onUnmounted } from "vue"
 import Nav from '@/components/topnav/index.vue'
 
+import { DefineComponent } from "vue";
+import axios from 'axios'
+
 const bgimg_url = ref(require('./images/bg1.png'))
 let index = 1
 const mybgimg = ref()
@@ -24,6 +27,7 @@ const mybgimg = ref()
 const timer = ref()
 const timer2 = ref()
 const timer3 = ref()
+
 
 onMounted(() => {
     timer.value = setInterval(() => {
@@ -37,6 +41,12 @@ onMounted(() => {
     timer2.value = setTimeout(() => {
                     mybgimg.value.style.opacity = 0.5
                 }, 3000)
+
+    console.log("onmounted axios here!")
+    axios.get("http://localhost:9999/sys/searchani/all").then((response) => {
+        console.log(response)
+    })
+    
 })
 //及时销毁，防止运行错误
 onUnmounted(()=>{
