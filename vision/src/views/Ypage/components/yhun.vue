@@ -7,7 +7,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+//100
+import { ref,onMounted } from 'vue'
+import axios from 'axios'
+const resdata = ref(null)
+onMounted(()=>{
+  console.log("call comp call axios !")
+  axios.get(`http://localhost:9999/ypage/top100NumStudio/chart5`).then((response) => {
+      console.log("yhun response")
+      console.log(response)
+      if(response.data.code==20000) {
+        resdata.value = response.data.data
+        console.log("yhun resdata")
+        console.log(resdata)
+        console.log("yhun resdata.value[1]")
+        console.log(resdata.value[1])
+      }
+  })
+})
 
 var myColor = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"]
 const dataset = {
@@ -42,7 +59,7 @@ series: [
         // 此时的color 可以修改柱子的颜色
         color: function(params) {
         // params 传进来的是柱子对象
-        console.log(params);
+        // console.log(params);
         // dataIndex 是当前柱子的索引号
         return myColor[params.dataIndex];
         }
@@ -91,7 +108,7 @@ series: [
         // 此时的color 可以修改柱子的颜色
         color: function(params) {
         // params 传进来的是柱子对象
-        console.log(params);
+        // console.log(params);
         // dataIndex 是当前柱子的索引号
         return myColor[params.dataIndex];
         }

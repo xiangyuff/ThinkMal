@@ -7,7 +7,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+//Genre
+import { ref,onMounted } from 'vue'
+import axios from 'axios'
+const resdata = ref(null)
+onMounted(()=>{
+  console.log("call comp call axios !")
+  axios.get(`http://localhost:9999/ypage/genresRateStudio/chart2`).then((response) => {
+      console.log("ystore response")
+      console.log(response)
+      if(response.data.code==20000) {
+        resdata.value = response.data.data
+        console.log("ystore resdata")
+        console.log(resdata)
+        console.log("ystore resdata.value[1]")
+        console.log(resdata.value[1])
+      }
+  })
+})
 
 var myColor = ["#1089E7", "#F57474", "#56D0E3", "#F8B448", "#8B78F6"];
 

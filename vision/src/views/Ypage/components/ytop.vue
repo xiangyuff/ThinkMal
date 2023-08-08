@@ -5,8 +5,26 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import * as echarts from 'echarts'
+//num
+
+import { ref,onMounted } from 'vue'
+import axios from 'axios'
+const resdata = ref(null)
+onMounted(()=>{
+  console.log("call comp call axios !")
+  axios.get(`http://localhost:9999/ypage/numTop8StudioDwd/chart4`).then((response) => {
+      console.log("ytop response")
+      console.log(response)
+      if(response.data.code==20000) {
+        resdata.value = response.data.data
+        console.log("ytop resdata")
+        console.log(resdata)
+        console.log("ytop resdata.value[1]")
+        console.log(resdata.value[1])
+      }
+  })
+})
 
 const mct = ref()
 

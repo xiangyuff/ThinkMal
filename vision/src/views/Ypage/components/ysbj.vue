@@ -7,7 +7,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+//like
+import { ref,onMounted } from 'vue'
+import axios from 'axios'
+const resdata = ref(null)
+onMounted(()=>{
+  console.log("call comp call axios !")
+  axios.get(`http://localhost:9999/ypage/likeRateStudio/chart3`).then((response) => {
+      console.log("ysbj response")
+      console.log(response)
+      if(response.data.code==20000) {
+        resdata.value = response.data.data
+        console.log("ysbj resdata")
+        console.log(resdata)
+        console.log("ysbj resdata.value[1]")
+        console.log(resdata.value[1])
+      }
+  })
+})
 
 const data = [
         { value: 800, name: 'Others' },

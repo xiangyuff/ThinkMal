@@ -15,9 +15,14 @@ const resdata = ref(null)
 onMounted(()=>{
   console.log("call comp call axios !")
   axios.get(`http://localhost:9999/ypage/compareStudio/chart1`).then((response) => {
+      console.log("yfive response")
       console.log(response)
       if(response.data.code==20000) {
         resdata.value = response.data.data
+        console.log("yfive resdata")
+        console.log(resdata)
+        console.log("yfive resdata.value[1]")
+        console.log(resdata.value[1])
       }
   })
 })
