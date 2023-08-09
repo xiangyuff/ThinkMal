@@ -1,7 +1,7 @@
 <template>
   <!-- hage -->
   <div class="panel pie">
-    <h2>年龄分布</h2>
+    <h2>动漫状态</h2>
     <e-charts class="chart" :option="option"/>
     <div class="panel-footer"></div>
 </div>
@@ -24,7 +24,7 @@ const option = ref({
       top: "90%",
       itemWidth: 10,
       itemHeight: 10,
-      data: ["0岁以上", "10-19岁", "20-29岁", "30-39岁", "40岁以上"],
+      data: ["已完结", "连载",  "断更"],
       textStyle: {
         color: "rgba(255,255,255,.5)",
         fontSize: "12"
@@ -32,7 +32,7 @@ const option = ref({
     },
     series: [
       {
-        name: "年龄分布",
+        name: "动漫状态",
         type: "pie",
         center: ["50%", "42%"],
         radius: ["40%", "60%"],
@@ -51,11 +51,9 @@ const option = ref({
         label: { show: false },
         labelLine: { show: false },
         data: [
-          { value: 1, name: "0岁以上" },
-          { value: 4, name: "10-19岁" },
-          { value: 2, name: "20-29岁" },
-          { value: 2, name: "30-39岁" },
-          { value: 1, name: "40岁以上" }
+          { value: 4876, name: "已完结" },
+          { value: 6404, name: "连载" },
+          { value: 1057, name: "断更" }
         ]
       }
     ]
