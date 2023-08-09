@@ -6,7 +6,7 @@
 
             <div @click="show_login_box" class="mybn" v-show="showbn"></div>
  
-            <div v-show="showlogin" class="box login">
+        <div v-show="showlogin" class="box login">
                 <div @click="quit_box" class = "quitbn"></div>
                 <div>.</div>
                 <div class="login_title"></div>
@@ -14,17 +14,17 @@
                 <div class="text_in_box">
                     <div class="line">
                         <span>Username: </span>
-                        <input v-model="username" placeholder="  please enter username" />
+                        <input v-model="data.username" placeholder="  please enter username" />
                     </div>
                     <div class="line">
                         <span>Password: </span>
-                        <input v-model="password" placeholder="  please enter your password" />
+                        <input v-model="data.password" placeholder="  please enter your password" />
                     </div>
                 </div>
 
                 <div @click="clickenter" class="enter"></div>
                 <div @click="show_regis_box" class="to_regis"></div>
-            </div>
+         </div>
 
             <div v-show="showregis" class="box regis">
                 <div @click="quit_box" class = "quitbn"></div>
@@ -34,11 +34,11 @@
                 <div class="text_in_box">
                     <div class="line">
                         <span>Username: </span>
-                        <input v-model="newusername" placeholder="  please enter username" />
+                        <input v-model="data1.newusername" placeholder="  please enter username" />
                     </div>
                     <div class="line">
                         <span>Password: </span>
-                        <input v-model="newpassword" placeholder="  please enter your password" />
+                        <input v-model="data1.newpassword" placeholder="  please enter your password" />
                     </div>
                     <div class="line">
                         <span>Email addr: </span>
@@ -55,18 +55,56 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted} from "vue"
+import { ref, onMounted, onUnmounted } from "vue"
+import { reactive } from 'vue'
 import { useRouter } from "vue-router"
-
 import Nav from '@/components/topnav/index.vue'
-
+import axios from 'axios'
 const bgimg_url = ref(require('./images/bg1.jpg'))
 let index = 1
 const mybgimg = ref()
-
 const timer = ref()
 const timer2 = ref()
 const timer3 = ref()
+
+const data = reactive({
+  username: '',
+  password: ''
+})
+const clickenter = () => {
+axios.post('http://localhost:9999/user/login', {
+    username: data.username,
+    password: data.password
+  }).then((res) => {
+    if(res.data.code==20000){
+    console.log(res);
+    router.push({ path:'/home' })
+    }else{
+    console.log(res);
+    alert("ERROR!")
+    }
+  })
+}
+const data1 = reactive({
+  newusername: '',
+  newpassword: ''
+})
+
+const clickaccount = () => {
+axios.post('http://localhost:9999/user/register', {
+    username: data1.newusername,
+    password: data1.newpassword
+  }).then((res) => {
+    if(res.data.code==20000){
+    console.log(res);
+    alert("注册成功！")
+    router.push({ path:'/login' })
+    }else{
+    console.log(res);
+    alert("用户名已被注册!")
+    }
+  })
+}
 
 onMounted(() => {
     timer.value = setInterval(() => {
@@ -118,18 +156,17 @@ const quit_box = function () {
 }
 
 const router = useRouter()
+/* const clickenter = function() {
+    router.push({
+        path: '/home'
+    })
+} */
 
-const clickaccount = function() {
+/* const clickaccount = function() {
     router.push({
         path: '/home'
     }) 
-}
-
-const clickenter = function() {
-    router.push({
-        path: '/home'
-    }) 
-}
+} */
 
 </script>
 
@@ -153,10 +190,6 @@ time, mark, audio, video {
 	border: 0;
 }
 
-.testbn{
-    position: absolute;
-    top:30%;
-}
 .myscreen {
     position: relative;
     width: 100%;
@@ -257,7 +290,12 @@ time, mark, audio, video {
     font-family: coffee;
     color:white;
 }
-
+/* .el-form-item {
+    margin-top: 15%;
+    margin-left: 17%;
+    font-family: coffee;
+    color:white;
+  } */
 .login .text_in_box{
     font-size: 25px;
 }
@@ -275,7 +313,11 @@ time, mark, audio, video {
     font-family:coffee;
     border-radius: 10px;
 }
-
+/* .el-input{
+    width:250px;
+    font-family:coffee;
+    border-radius: 10px;
+} */
 .login input{
     font-size:17px;
     height:40px;

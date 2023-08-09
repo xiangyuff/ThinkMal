@@ -1,0 +1,14 @@
+server:
+  port:  9999
+
+spring:
+  application:
+    name: content-api
+  datasource:
+    username:  myuser
+    password:  ldx20020821
+    url:  jdbc:mysql:///springbootdata
+
+logging:
+  level:
+    com.example:  debug

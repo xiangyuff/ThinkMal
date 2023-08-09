@@ -8,7 +8,7 @@ import 'echarts'
 
 import '@/assets/global.css'
 
-// import axios from 'axios'
+import axios from 'axios'
 // import VueAxios from 'vue-axios';
 
 // app.config.globalProperties.$axios = axios;

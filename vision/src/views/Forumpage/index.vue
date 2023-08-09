@@ -17,11 +17,11 @@
                 </ul>
             </div>
             <div class="inputbox">
-                <input v-model="newcomment" placeholder="发布神妙评论"/>
+                <input v-model="data.newcomment" placeholder="发布神妙评论"/>
             </div>
 
             <div class="star"></div>
-            <div class="submitbn"></div>
+            <div @click="submit" class="submitbn"></div>
         </div>
     </div>
 </template>
@@ -30,9 +30,25 @@
 import Nav from '@/components/topnav/index.vue'
 
 import {ref, onMounted } from 'vue'
-
+import { reactive } from 'vue'
 import axios from 'axios'
 const resdata = ref(null)
+
+const data= reactive({
+  newcomment: ''
+})
+const submit = () => {
+axios.post('http://localhost:9999/forum/comment/submit', {
+    username: "游客",
+    cmtext: data.newcomment,
+  }).then((res) => {
+    if(res.data.code==20000){
+    console.log(res);
+    alert("发表成功！")
+    }
+  })
+}
+
 onMounted(()=>{
   console.log("call comp call axios !")
   axios.get(`http://localhost:9999/forum/comment/getcmt`).then((response) => {
@@ -47,9 +63,7 @@ onMounted(()=>{
       }
   })
 })
-
 const newcomment = ref('')
-
 </script>
 
 <style lang="less" scoped>

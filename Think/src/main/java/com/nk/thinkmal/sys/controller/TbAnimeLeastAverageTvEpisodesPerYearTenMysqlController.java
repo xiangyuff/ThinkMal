@@ -1,0 +1,18 @@
+package com.nk.thinkmal.sys.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+/**
+ * <p>
+ * 1960年至今每年TV动画的平均剧集数量最少的前十名 前端控制器
+ * </p>
+ *
+ * @author baomidou
+ * @since 2023-08-07
+ */
+@Controller
+@RequestMapping("/sys/tbAnimeLeastAverageTvEpisodesPerYearTenMysql")
+public class TbAnimeLeastAverageTvEpisodesPerYearTenMysqlController {
+
+}
