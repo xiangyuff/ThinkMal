@@ -2,7 +2,7 @@
     <!-- htype -->
     <div class="panel bar">
         <h2>
-            动漫类型 
+            动漫题材 
         </h2>
         <div>
           <button class="bn bn1" @click="change_to_fo">former</button>
@@ -18,8 +18,8 @@
 import { ref } from 'vue'
 
 const dataAll = [
-    { year: "former", data: [200, 300, 300, 900, 1500, 1200, 600] },
-    { year: "now", data: [300, 400, 350, 800, 1800, 1400, 700] }
+    { year: "former", data: [2481, 1985, 3011, 2903, 2150, 2217, 3605] },
+    { year: "now", data: [2583, 1405, 2351, 1809, 1809, 2454, 2701] }
   ]
 
 
@@ -90,7 +90,7 @@ const option = ref({
         name: "直接访问",
         type: "bar",
         barWidth: "35%",
-        data: [200, 300, 300, 900, 1500, 1200, 600],
+        data: [2481, 1985, 3011, 2903, 2150, 2217, 3605],
         itemStyle: {
           barBorderRadius: 5
         }
