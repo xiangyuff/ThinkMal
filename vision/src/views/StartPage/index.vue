@@ -278,9 +278,20 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-       
         transition: 2s;
         }
+
+    .images::-webkit-scrollbar{
+        width: 8px;
+        background-color: #00000066;
+    }
+
+    .images::-webkit-scrollbar-thumb{
+        width: 5px;
+        border-radius: 5px;
+        background-color: rgba(61, 43, 111, 0.905);
+    }
+
     .shell {
         width: 100%;
         height: 100vh;
