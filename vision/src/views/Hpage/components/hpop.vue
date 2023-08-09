@@ -1,7 +1,7 @@
 <template>
     <!-- hpop -->
     <div class="panel line">
-      <h2>受欢迎程度</h2>
+      <h2>动漫类型</h2>
       <e-charts class="chart" :option="option"></e-charts>
       <div class="panel-footer"></div>
     </div>
@@ -12,9 +12,9 @@
 import { ref } from 'vue'
 
 var data = {
-    year: [
-      [24, 40, 101, 134, 90, 230, 210, 230, 120, 230, 210, 120],
-      [40, 64, 191, 324, 290, 330, 310, 213, 180, 200, 180, 79]
+  year: [
+      [2490, 4120, 1017, 1234, 1997, 2301, 2102, 2304, 1201, 2305, 2102, 1975],
+      [1403, 1864, 1917, 2324, 2901, 1330, 1317, 2130, 1802, 2001, 1805, 1879]
     ]
   };
 
@@ -44,18 +44,18 @@ const option = ref({
       type: "category",
       boundaryGap: false,
       data: [
-        "1月",
-        "2月",
-        "3月",
-        "4月",
-        "5月",
-        "6月",
-        "7月",
-        "8月",
-        "9月",
-        "10月",
-        "11月",
-        "12月"
+        "05年",
+        "06",
+        "07",
+        "08",
+        "09",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
       ],
       axisTick: {
         show: false
@@ -83,14 +83,14 @@ const option = ref({
     },
     series: [
       {
-        name: "收藏人数",
+        name: "TV数",
         type: "line",
         stack: "总量",
         smooth: true,
         data: data.year[0]
       },
       {
-        name: "追番人数",
+        name: "Movie数",
         type: "line",
         stack: "总量",
         smooth: true,
