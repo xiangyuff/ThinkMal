@@ -130,7 +130,7 @@ setInterval(() => {
 
 </script>
 
-<style>
+<style scoped>
 .spes{
     position: absolute;
     width: 100%;
