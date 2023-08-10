@@ -74,7 +74,7 @@ const option = ref({
         axisTick: {
           show: false
         },
-        data: ['Act,Adv,Fan','Com,fe','Act','Dra','Fan','Act,Sci-Fi','Act,Sci-Fi', 'fe', 'rde', 'Hen', 'Com']
+        data: ['Act,Adv,Fan','Com,fe','Act','Dra','Fan','Act,Sci-Fi', 'fe', 'rde', 'Hen', 'Com']
       }
     ],
     series: [
