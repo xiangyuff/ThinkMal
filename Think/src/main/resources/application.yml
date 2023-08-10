@@ -5,9 +5,9 @@ spring:
   application:
     name: content-api
   datasource:
-    username:  myuser
-    password:  ldx20020821
-    url:  jdbc:mysql:///springbootdata
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/thinkmaldb?serverTimezone=UTC
 
 logging:
   level:
